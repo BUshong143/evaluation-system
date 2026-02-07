@@ -1,0 +1,220 @@
+/* =========================
+   GLOBAL RESET & VARIABLES
+========================= */
+:root {
+  --primary: #7f1d1d;
+  --primary-dark: #991b1b;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(127,29,29,0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(153,27,27,0.25), transparent 60%),
+    linear-gradient(135deg, #7f1d1d, #991b1b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+.login-container {
+  background: var(--card);
+  width: 100%;
+  max-width: 420px;
+  padding: 42px 38px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.45s ease-out;
+}
+
+/* =========================
+   TITLE
+========================= */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--primary);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-container h2 i {
+  font-size: 22px;
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group label i {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: #f9fafb;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(127, 29, 29, 0.15);
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+button i {
+  font-size: 16px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =========================
+   LOADING STATE
+========================= */
+button.loading {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+.error {
+  margin-top: 14px;
+  color: #dc2626;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.login-footer {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.login-footer i {
+  font-size: 12px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 34px 26px;
+    border-radius: 16px;
+  }
+
+  .login-container h2 {
+    font-size: 24px;
+  }
+}

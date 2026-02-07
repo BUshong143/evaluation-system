@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Icons & Font -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/hr.css" />
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="hr-header">
+      <div class="hr-avatar">
+        <i class="fa fa-users"></i>
+      </div>
+      <h2>ADMIN Panel</h2>
+    </div>
+
+    <button onclick="showSection('accounts')">
+      <i class="fa fa-user"></i> Manage Accounts
+    </button>
+
+    <button onclick="showSection('departments')">
+      <i class="fa fa-building"></i> Create Department
+    </button>
+
+    <button class="logout" onclick="logout()">
+      <i class="fa fa-sign-out"></i> Logout
+    </button>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- MANAGE ACCOUNTS -->
+    <section id="accounts" class="section">
+      <h3>Manage Accounts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+      </table>
+    </section>
+
+    <!-- CREATE DEPARTMENT -->
+    <section id="departments" class="section hidden">
+      <h3>Create Department & Head</h3>
+      <p class="muted">
+        This will create a new department and assign a department head account.
+      </p>
+
+      <div class="form-group">
+        <label>Department Name</label>
+        <input id="deptName" placeholder="e.g. Information Technology">
+      </div>
+
+      <div class="form-group">
+        <label>Head Username</label>
+        <input id="deptUsername" placeholder="e.g. head_it">
+      </div>
+
+      <!-- 🔐 TEMP PASSWORD -->
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          id="deptPassword"
+          placeholder="Enter secure password"
+          oninput="checkTempPasswordStrength(this.value)"
+        >
+
+        <div class="password-strength">
+          <div class="strength-bar">
+            <span id="tempStrengthFill"></span>
+          </div>
+          <p id="tempStrengthText" class="strength-text">
+            Enter a password
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <select disabled>
+          <option>Department Head</option>
+        </select>
+      </div>
+
+      <button onclick="createDepartment()">
+        Create Department & Head Account
+      </button>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/hr.js"></script>
+</body>
+</html>

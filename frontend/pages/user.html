@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Client Satisfaction Feedback Form</title>
+  <link rel="stylesheet" href="../assets/css/public_evaluation.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2>CLIENT SATISFACTION FEEDBACK FORM</h2>
+  <p class="subtitle">
+    Kindly let us know how we served you. This form may be used to give a
+    compliment, suggestion, or complaint.
+  </p>
+
+  <form id="evaluationForm">
+
+    <!-- BASIC INFO -->
+    <div class="row">
+      <input type="text" id="name" placeholder="Name (Optional)" />
+      <input type="date" id="date" required />
+      <input type="time" id="time" required />
+    </div>
+
+    <!-- CLIENT CATEGORY -->
+    <div class="section">
+      <label>Client Category:</label>
+      <select id="client_category" required>
+        <option value="">Select</option>
+        <option>Student</option>
+        <option>Faculty</option>
+        <option>Admin/Personnel</option>
+        <option>Visitor</option>
+        <option>Others</option>
+      </select>
+    </div>
+
+    <!-- SERVICE RATING -->
+    <h3>Part I: Client Satisfaction Rating</h3>
+    <p>Rating Scale: 5-Very Satisfied | 1-Not Satisfied</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>5</th>
+          <th>4</th>
+          <th>3</th>
+          <th>2</th>
+          <th>1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Service provider’s overall treatment of you</td>
+          <td colspan="5">
+            <input type="number" min="1" max="5" required />
+          </td>
+        </tr>
+        <tr>
+          <td>Clarity of instructions provided</td>
+          <td colspan="5">
+            <input type="number" min="1" max="5" required />
+          </td>
+        </tr>
+        <tr>
+          <td>Timeliness of service delivery</td>
+          <td colspan="5">
+            <input type="number" min="1" max="5" required />
+          </td>
+        </tr>
+        <tr>
+          <td>Quality of service received</td>
+          <td colspan="5">
+            <input type="number" min="1" max="5" required />
+          </td>
+        </tr>
+        <tr>
+          <td>Knowledge and competence of service provider</td>
+          <td colspan="5">
+            <input type="number" min="1" max="5" required />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- FEEDBACK -->
+    <h3>Part II: Client Feedback</h3>
+
+    <select id="feedback_type" required>
+      <option value="">Select Feedback Type</option>
+      <option>Compliment</option>
+      <option>Suggestion</option>
+      <option>Complaint</option>
+    </select>
+
+    <textarea
+      id="feedback_message"
+      placeholder="Please provide details..."
+      required
+    ></textarea>
+
+    <button type="submit">Submit Evaluation</button>
+  </form>
+
+  <p id="result"></p>
+</div>
+
+
+<script src="../assets/js/public_evaluation.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 32px;
+}
+
+.eval-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  margin-bottom: 20px;
+}
+
+pre {
+  white-space: pre-wrap;
+}

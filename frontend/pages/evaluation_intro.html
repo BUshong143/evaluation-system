@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Evaluation Introduction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- W3Schools Icons (Font Awesome) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/evaluation_intro.css" />
+</head>
+<body>
+
+<div class="intro-wrapper">
+  <div class="intro-card w3-animate-opacity">
+
+    <!-- ICON -->
+    <div class="intro-avatar">
+      <i class="fa fa-pencil-square-o"></i>
+    </div>
+
+    <h1 id="serviceName">
+      Client Satisfaction Evaluation
+    </h1>
+
+    <p id="introMessage" class="intro-subtitle">
+      <i class="fa fa-spinner fa-spin"></i>
+      Checking availability of the evaluation…
+    </p>
+
+    <p class="intro-subtitle">
+      Your feedback helps us improve our services.
+    </p>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- CONTENT -->
+    <div class="intro-content">
+      <p>
+        <i class="fa fa-info-circle"></i>
+        This evaluation is intended to assess the quality of service provided
+        by the department. Your honest feedback helps us improve and deliver
+        better public service.
+      </p>
+
+      <p>
+        <i class="fa fa-clock-o"></i>
+        The evaluation will only take a few minutes to complete.
+        Your responses are <strong>confidential</strong> and may be submitted
+        <strong>anonymously</strong>.
+      </p>
+    </div>
+
+    <!-- START BUTTON -->
+    <button
+      id="startBtn"
+      class="start-btn w3-button w3-round-large"
+      onclick="startEvaluation()"
+      disabled
+    >
+      <i class="fa fa-play-circle"></i>
+      Start Evaluation
+    </button>
+
+    <p class="intro-note">
+      <i class="fa fa-heart"></i>
+      Thank you for your time and participation.
+    </p>
+
+  </div>
+</div>
+
+<script src="../assets/js/evaluation_intro.js"></script>
+</body>
+</html>

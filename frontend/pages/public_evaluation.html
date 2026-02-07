@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Client Satisfaction Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- W3Schools Icons (Font Awesome) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/public_evaluation.css" />
+</head>
+<body>
+
+<div class="page-wrapper" id="pageContent">
+  <div class="form-card" id="evaluationCard">
+
+    <h1>
+      <i class="fa fa-clipboard"></i>
+      CLIENT SATISFACTION FEEDBACK FORM
+    </h1>
+
+    <p class="subtitle">
+      Kindly let us know how we served you. This form may be used to give a
+      compliment, suggestion, or complaint.
+    </p>
+
+    <form id="evaluationForm">
+
+      <!-- BASIC INFO -->
+      <div class="row">
+        <input type="text" id="name" placeholder="👤 Name (Optional)" autocomplete="off" />
+      </div>
+
+      <!-- CLIENT CATEGORY -->
+      <label>
+        <i class="fa fa-users"></i>
+        Client Category
+      </label>
+      <select id="client_category" required>
+        <option value="">Select</option>
+        <option value="Student">Student</option>
+        <option value="Faculty">Faculty</option>
+        <option value="Admin/Personnel">Admin / Personnel</option>
+        <option value="Visitor">Visitor</option>
+      </select>
+
+      <!-- =========================
+           PART I – STAR RATINGS
+      ========================== -->
+      <h2>
+        Part I: Client Satisfaction Rating
+      </h2>
+
+      <p class="scale">
+        5 – Very Satisfied | 1 – Not Satisfied
+      </p>
+
+      <div id="ratingContainer"></div>
+
+      <!-- =========================
+           PART II – FEEDBACK
+      ========================== -->
+      <h2>
+        Part II: Client Feedback
+      </h2>
+
+      <label>
+        <i class="fa fa-tags"></i>
+        Type of Feedback
+      </label>
+      <select id="feedback_type" required>
+        <option value="">Select</option>
+        <option value="Compliment">Compliment</option>
+        <option value="Suggestion">Suggestion</option>
+        <option value="Complaint">Complaint</option>
+      </select>
+
+      <label>
+        <i class="fa fa-pencil"></i>
+        Feedback Details
+      </label>
+      <textarea
+        id="feedback_message"
+        rows="4"
+        placeholder="Write your feedback here..."
+        required
+      ></textarea>
+
+      <button type="submit" class="submit-btn">
+        <i class="fa fa-paper-plane"></i>
+        Submit Evaluation
+      </button>
+
+      <p id="result" class="result"></p>
+    </form>
+
+  </div>
+</div>
+
+<!-- =========================
+     SUCCESS MODAL
+========================== -->
+<div id="successBox" class="success-box hidden" role="dialog" aria-modal="true">
+  <div class="success-content">
+
+    <div class="success-icon">
+      <i class="fa fa-check"></i>
+    </div>
+
+    <h3>Evaluation Submitted Successfully</h3>
+
+    <p>
+      Thank you for taking the time to share your feedback.
+      Your response has been recorded successfully.
+    </p>
+
+    <p style="margin-top:12px;font-size:14px;color:#6b7280;">
+      You may now safely close this tab or window.
+    </p>
+
+  </div>
+</div>
+
+<!-- =========================
+     AI CHAT BUTTON
+========================== -->
+<button id="ai-button" type="button" title="Ask AI Assistant">
+  <i class="fa fa-comments"></i>
+</button>
+
+<!-- =========================
+     AI CHAT WINDOW
+========================== -->
+<div id="ai-chat" class="hidden">
+
+  <div class="ai-header">
+    <span>
+      <i class="fa fa-robot"></i>
+      AI Assistant
+    </span>
+    <button id="ai-close" aria-label="Close AI chat">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+
+  <div id="ai-messages"></div>
+
+  <div class="ai-input">
+    <input id="ai-input" type="text" placeholder="Ask Buddy..." autocomplete="off" />
+    <button id="ai-send" onclick="sendAIMessage()">
+      <i class="fa fa-send"></i>
+    </button>
+  </div>
+</div>
+
+<script src="../assets/js/public_evaluation.js"></script>
+</body>
+</html>

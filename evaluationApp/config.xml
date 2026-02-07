@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget
+    id="com.evsu.evaluation"
+    version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>EVSU Evaluation</name>
+    <description>EVSU Evaluation App</description>
+
+    <!-- Load local app -->
+    <content src="index.html" />
+
+    <!-- Network access -->
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+
+    <!-- ================= ANDROID CONFIG ================= -->
+    <platform name="android">
+
+        <!-- SDK versions -->
+        <preference name="android-minSdkVersion" value="22" />
+        <preference name="android-targetSdkVersion" value="35" />
+        <preference name="android-compileSdkVersion" value="35" />
+        <preference name="android-buildToolsVersion" value="35.0.0" />
+
+        <!-- Allow HTTP backend (IMPORTANT) -->
+        <edit-config
+            file="app/src/main/AndroidManifest.xml"
+            mode="merge"
+            target="/manifest/application">
+
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+
+        <!-- Cordova file access -->
+        <preference name="AndroidInsecureFileModeEnabled" value="true" />
+
+    </platform>
+
+</widget>

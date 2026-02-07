@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Department Head Dashboard</title>
+
+  <!-- W3Schools / Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- Head CSS -->
+  <link rel="stylesheet" href="../assets/css/head.css" />
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="head-header">
+      <div class="head-avatar">
+        <i class="fa-solid fa-user-tie"></i>
+      </div>
+      <h2>HEAD Panel</h2>
+    </div>
+
+    <button onclick="showSection('dashboard')">
+      <i class="fa-solid fa-chart-pie"></i>
+      Dashboard
+    </button>
+
+    <button onclick="showSection('questionnaires')">
+      <i class="fa-solid fa-file-lines"></i>
+      Manage Questionnaires
+    </button>
+
+    <button onclick="showSection('send')">
+      <i class="fa-solid fa-paper-plane"></i>
+      Send Evaluation
+    </button>
+
+    <button onclick="showSection('responses')">
+      <i class="fa-solid fa-star"></i>
+      View Responses
+    </button>
+
+    <button class="logout" onclick="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Logout
+    </button>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="content">
+
+    <!-- ================= DASHBOARD ================= -->
+    <section
+      id="dashboard"
+      class="section dashboard-hero"
+      aria-label="EVSU Logo"
+      data-bg-name="EVSU Logo"
+    >
+      <!-- Accessible name for background image -->
+      <span class="sr-only">EVSU Logo</span>
+
+      <h3>
+        <i class="fa-solid fa-building"></i>
+        Department Overview
+      </h3>
+
+      <p class="muted">
+        Create, manage, and send Client Satisfaction evaluations.
+        Monitor responses, star ratings, averages, and AI-powered summaries.
+      </p>
+    </section>
+
+    <!-- ================= QUESTIONNAIRES ================= -->
+    <section id="questionnaires" class="section hidden">
+      <h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+        Create / Edit Questionnaire
+      </h3>
+
+      <p class="muted">
+        Prepare the evaluation questions before sending them to the public
+        evaluation terminal.
+      </p>
+
+      <div class="form-group">
+        <label>
+          <i class="fa-solid fa-briefcase"></i>
+          Office / Service Name
+        </label>
+        <input
+          type="text"
+          id="service_name"
+          placeholder="Type here....."
+        />
+      </div>
+
+      <div class="form-group">
+        <label>
+          <i class="fa-solid fa-list-check"></i>
+          Evaluation Questions
+        </label>
+
+        <div id="questionList"></div>
+
+        <div class="button-group">
+          <button type="button" class="primary" onclick="addQuestion()">
+            <i class="fa-solid fa-plus"></i>
+            Add Question
+          </button>
+
+          <button type="button" class="ai-btn" onclick="generateAIQuestionnaire()">
+            <i class="fa-solid fa-robot"></i>
+            Generate AI Questionnaire
+          </button>
+
+          <button onclick="saveQuestionnaire()">
+            <i class="fa-solid fa-save"></i>
+            Save Questionnaire
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEND ================= -->
+    <section id="send" class="section hidden">
+      <h3>
+        <i class="fa-solid fa-paper-plane"></i>
+        Send Evaluation
+      </h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service / Questionnaire</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="linkTable"></tbody>
+      </table>
+    </section>
+
+    <!-- ================= RESPONSES ================= -->
+    <section id="responses" class="section hidden">
+      <h3>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        Received Evaluations
+      </h3>
+
+      <div id="avgRatingBox" class="avg-box"></div>
+
+      <button class="ai-btn" onclick="summarizeFeedback()">
+        <i class="fa-solid fa-robot"></i>
+        Summarize Client Feedback
+      </button>
+
+      <div id="aiSummary" class="ai-summary"></div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Ratings</th>
+            <th>Feedback</th>
+          </tr>
+        </thead>
+        <tbody id="responseTable"></tbody>
+      </table>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/head.js"></script>
+</body>
+</html>

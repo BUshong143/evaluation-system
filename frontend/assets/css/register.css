@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+.login-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* =====================
+   LEFT PANEL
+===================== */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ai-icon {
+  font-size: 7rem;
+  margin-bottom: 1.5rem;
+}
+
+.left-panel h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.left-panel p {
+  opacity: 0.9;
+}
+
+/* =====================
+   RIGHT PANEL
+===================== */
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-card h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.subtext {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* =====================
+   FORM
+===================== */
+.input-group {
+  margin-bottom: 1.4rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #7f1d1d;
+  box-shadow: 0 0 0 3px rgba(127,29,29,0.15);
+}
+
+/* =====================
+   PASSWORD STRENGTH
+===================== */
+.password-strength {
+  margin-top: -0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.strength-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.strength-text {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.strength-weak { color: #dc2626; }
+.strength-medium { color: #f59e0b; }
+.strength-strong { color: #16a34a; }
+
+/* =====================
+   BUTTON
+===================== */
+button {
+  width: 100%;
+  padding: 1rem;
+  background: #7f1d1d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #991b1b;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}

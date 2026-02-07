@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HR Panel</title>
+
+  <!-- W3Schools / Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+
+    <div class="admin-header">
+      <div class="admin-avatar">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <h2>HR Panel</h2>
+    </div>
+
+    <nav class="menu">
+      <button onclick="showSection('dashboard')">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </button>
+
+      <button onclick="showSection('users')">
+        <i class="fa-solid fa-users"></i>
+        User Management
+      </button>
+
+      <button onclick="showSection('departments')">
+        <i class="fa-solid fa-building"></i>
+        Departments
+      </button>
+
+      <button onclick="showSection('settings')">
+        <i class="fa-solid fa-gear"></i>
+        System Settings
+      </button>
+    </nav>
+
+    <button class="logout" onclick="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Logout
+    </button>
+
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="content">
+
+    <!-- ================= DASHBOARD ================= -->
+    <section id="dashboard" class="section">
+      <h3>System Overview</h3>
+      <p class="muted">
+        Administrative monitoring dashboard. Displays system usage,
+        organizational structure, and HR-created questionnaires.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>Total Users</h4>
+          <p id="totalUsers">0</p>
+        </div>
+
+        <div class="card">
+          <h4>Departments</h4>
+          <p id="totalDepartments">0</p>
+        </div>
+
+        <div class="card">
+          <h4>HR Questionnaires</h4>
+          <p id="totalQuestionnaires">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= USER MANAGEMENT ================= -->
+    <section id="users" class="section hidden">
+      <h3>User Management</h3>
+      <p class="muted">Manage system users and assign roles.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+      </table>
+    </section>
+
+    <!-- ================= DEPARTMENTS ================= -->
+    <section id="departments" class="section hidden">
+      <h3>Departments / Offices</h3>
+      <p class="muted">
+        Manage departments and assign or update department heads.
+      </p>
+
+      <div class="form-group">
+        <label>New Department Name</label>
+        <input id="deptName" placeholder="e.g. Registrar Office" />
+        <button onclick="createDepartment()">
+          <i class="fa-solid fa-plus"></i>
+          Add Department
+        </button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Department Head</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="departmentTable"></tbody>
+      </table>
+    </section>
+
+    <!-- ================= SYSTEM SETTINGS ================= -->
+    <section id="settings" class="section hidden">
+      <h3>System Settings</h3>
+      <p class="muted">
+        Global configuration for the evaluation system.
+      </p>
+
+      <div class="form-group">
+        <label>Evaluation Availability</label>
+        <select id="evaluationStatus">
+          <option value="open">Open</option>
+          <option value="closed">Closed</option>
+        </select>
+
+        <button onclick="saveSettings()">
+          <i class="fa-solid fa-save"></i>
+          Save Settings
+        </button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Admin JS -->
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

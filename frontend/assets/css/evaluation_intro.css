@@ -1,0 +1,220 @@
+/* =========================
+   VARIABLES & RESET
+========================= */
+:root {
+  --primary: #7f1d1d;
+  --primary-dark: #991b1b;
+  --primary-soft: rgba(127, 29, 29, 0.12);
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, #ffffff 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.intro-wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.intro-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  max-width: 760px;
+  width: 100%;
+  padding: 52px 46px;
+  border-radius: 26px;
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  animation: fadeIn 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+/* =========================
+   ICON / AVATAR
+========================= */
+.intro-avatar {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, var(--primary), var(--primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #ffffff;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+  font-size: 30px;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.intro-subtitle {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.intro-subtitle i {
+  margin-right: 6px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.divider {
+  width: 70px;
+  height: 4px;
+  background:
+    linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 999px;
+  margin: 0 auto 30px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.intro-content {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 36px;
+}
+
+.intro-content p {
+  margin-bottom: 14px;
+}
+
+.intro-content i {
+  margin-right: 8px;
+  color: var(--primary);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.start-btn {
+  background:
+    linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  border: none;
+  padding: 16px 18px;
+  width: 100%;
+  max-width: 340px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.start-btn i {
+  margin-right: 6px;
+}
+
+.start-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.45);
+}
+
+.start-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.start-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+}
+
+/* =========================
+   FOOTNOTE
+========================= */
+.intro-note {
+  margin-top: 26px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.intro-note i {
+  color: #dc2626;
+  margin-right: 4px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+  .intro-card {
+    padding: 36px 26px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .intro-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 30px;
+  }
+
+  .start-btn {
+    font-size: 15px;
+  }
+}
