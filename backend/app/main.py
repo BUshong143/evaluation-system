@@ -5,6 +5,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import func
+import os
 
 from .database import SessionLocal, engine
 from .models import Base, User, Department, Questionnaire, EvaluationResponse
@@ -29,9 +30,19 @@ app = FastAPI(title="University Evaluation System API")
 Base.metadata.create_all(bind=engine)
 app.include_router(ai_router)
 
+# ======================================================
+# ✅ PRODUCTION-SAFE CORS (FIXES MOBILE ERROR)
+# ======================================================
+ALLOWED_ORIGINS = [
+    "https://evaluation-system-2.onrender.com",
+    "https://evaluation-system-1.onrender.com",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -62,6 +73,13 @@ def seed_users():
 
     db.commit()
     db.close()
+
+# ======================================================
+# ROOT HEALTH CHECK (IMPORTANT FOR RENDER + MOBILE)
+# ======================================================
+@app.get("/")
+def root():
+    return {"status": "API running"}
 
 # ======================================================
 # AUTH — LOGIN
